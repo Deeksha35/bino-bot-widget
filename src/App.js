@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const handleClick = () => {
+    const message = encodeURIComponent("Hi Bino, I want to know about job opportunities in Bangalore!");
+    const phoneNumber = "918762192191"; // Bino WhatsApp number (change if needed)
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bino-bot">
+      <button onClick={handleClick} className="bino-button">Chat with Bino</button>
     </div>
   );
 }
